@@ -11,7 +11,7 @@ https://github.com/ztxtz/jtcapps-com. Pushes to `main` deploy the site.
 The homepage and `/unfeast/` subtree come from `launch/jtc-homepage/public/`
 in https://github.com/tom28881/Unfeast, branch
 `codex/jtc-website-analytics`.
-Imported source revision: `66b920e`.
+Imported source revision: `9349a4c`.
 
 To update, check out the intended source revision, read its deployment
 instructions, run `python3 verify.py` from `launch/jtc-homepage/`, then copy

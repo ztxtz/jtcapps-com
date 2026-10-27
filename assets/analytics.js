@@ -1,6 +1,7 @@
 /* Privacy choices and website analytics. Public website IDs are configuration, not secrets. */
 (() => {
   'use strict';
+  if (window.top !== window.self) return;
   const script = document.currentScript;
   const id = script && script.dataset.websiteId;
   const domain = location.hostname;
