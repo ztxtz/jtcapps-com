@@ -11,7 +11,7 @@ https://github.com/ztxtz/jtcapps-com. Pushes to `main` deploy the site.
 The homepage and `/unfeast/` subtree come from `launch/jtc-homepage/public/`
 in https://github.com/tom28881/Unfeast, branch
 `codex/jtc-website-analytics`.
-Imported source revision: `9349a4c`.
+Imported source revision: `58ddfeb`.
 
 To update, check out the intended source revision, read its deployment
 instructions, run `python3 verify.py` from `launch/jtc-homepage/`, then copy
@@ -31,4 +31,4 @@ Check the GitHub Pages build and HTTPS responses for `/`, `/privacy/`,
 the supplied `404.html`, HTTP redirects to HTTPS, and `www` redirects to
 the apex domain. Compare live page and asset bytes with committed files.
 
-The homepage includes a consent-gated self-hosted Umami integration. Its privacy notice and tracking assets are part of the upstream source; preserve them when updating the site. Sensitive paths do not load the recorder.
+The homepage includes a self-hosted Umami integration. Its privacy notice and tracking assets are part of the upstream source; preserve them when updating the site. Sensitive paths do not load analytics, and browser privacy signals are respected.
