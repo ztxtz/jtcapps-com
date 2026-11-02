@@ -1,34 +1,42 @@
-# JTC Apps website
+# JTC website
 
 Public site: https://jtcapps.com
 
-GitHub Pages serves the root of `main` in
-https://github.com/ztxtz/jtcapps-com. Pushes to `main` deploy the site.
-`CNAME` binds the custom domain; `.nojekyll` preserves the static bundle.
+Static files in this repository, published to the Cloudflare Pages project
+`jtcapps-site` by `./deploy.sh`, which needs `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID`. Pushing to `main` does not deploy. Roll back from the
+project's Deployments list in the Cloudflare dashboard. There is no build step.
 
-## Homepage source and updates
+## Homepage
 
-The homepage and `/unfeast/` subtree come from `launch/jtc-homepage/public/`
-in https://github.com/tom28881/Unfeast, branch
-`codex/jtc-website-analytics`.
-Imported source revision: `58ddfeb`.
+`index.html`, `home.css` and `home.js` are maintained here. `home.js` runs the
+WebGL Silk hero and leaves the CSS gradient in `home.css` in place without WebGL.
+Fonts are self-hosted in `assets/fonts/` (latin subsets, licences in `licenses/`)
+because the privacy notice names no font provider.
 
-To update, check out the intended source revision, read its deployment
-instructions, run `python3 verify.py` from `launch/jtc-homepage/`, then copy
-the contents of `public/` to this repository root. Preserve `CNAME`,
-`.nojekyll`, and the existing legacy `/ios/` pages. Compare copied files
-byte for byte before committing and pushing to `main`.
+The homepage stays abstract: it names no app and shows no app icon or screenshot.
+App names live on `/work/`. The design source is the canvas
+https://claude.ai/artifact/PM9oETjacwDBpEDqZ7jXST.
 
-No build step or external runtime is required. Keep the supplied licenses,
-prelaunch `noindex` metadata, and Coming soon status. App availability and
+## Other pages
+
+`/unfeast/` comes from `launch/jtc-homepage/public/` in
+https://github.com/tom28881/Unfeast, branch `codex/jtc-website-analytics`. When
+importing from there, copy only `unfeast/` and check `privacy/` by hand: that bundle's
+root files are the previous homepage and would overwrite this one. `privacy/` and
+`404.html` still use `jtc.css` from that design. The legacy `/ios/` pages and root
+`style.css` are kept for existing links.
+
+Keep the `noindex` metadata and Coming soon status until launch. App availability and
 mailbox handling are separate from website deployment.
 
 ## Production verification
 
-Check the GitHub Pages build and HTTPS responses for `/`, `/privacy/`,
-`/unfeast/`, `/unfeast/support/`, `/unfeast/privacy/`, `/unfeast/terms/`, and
-`/unfeast/consumer-health/`. Confirm a missing path returns HTTP 404 with
-the supplied `404.html`, HTTP redirects to HTTPS, and `www` redirects to
-the apex domain. Compare live page and asset bytes with committed files.
+Check HTTPS responses for `/`, `/work/`, `/privacy/`, `/unfeast/`, `/unfeast/support/`,
+`/unfeast/privacy/`, `/unfeast/terms/` and `/unfeast/consumer-health/`. Confirm a
+missing path returns HTTP 404 with `404.html`, HTTP redirects to HTTPS, and `www`
+redirects to the apex domain. Compare live page and asset bytes with committed files.
 
-The homepage includes a self-hosted Umami integration. Its privacy notice and tracking assets are part of the upstream source; preserve them when updating the site. Sensitive paths do not load analytics, and browser privacy signals are respected.
+The site includes a self-hosted Umami integration. Its privacy notice and tracking
+assets must stay in place. Sensitive paths do not load analytics, and browser privacy
+signals are respected.

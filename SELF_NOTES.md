@@ -1,5 +1,6 @@
 # Project memory
 
-- Hosting repository: https://github.com/ztxtz/jtcapps-com. GitHub Pages publishes the repository root from `main`; commit and push completed updates directly. `CNAME` binds `jtcapps.com` and `.nojekyll` disables Jekyll processing.
-- Canonical homepage source and update/verification workflow are in `README.md`. Preserve the source bundle's Unfeast routes, licenses, and prelaunch status. The legacy `/ios/` pages and root `style.css` are retained for existing links.
-- Domain DNS already targets GitHub Pages; website publication does not require changing DNS or the separate restricted ChatGPT Site preview.
+- Hosting repository: https://github.com/ztxtz/jtcapps-com. Cloudflare Pages project `jtcapps-site` serves the site, published by `./deploy.sh`; pushing to `main` does not deploy. DNS is on Cloudflare. A machine with a stale resolver can still see the old GitHub Pages address and a "Site not found" 404, so verify with `dig @1.1.1.1` before treating that as an outage.
+- Homepage rule from the owner: abstract only. No app names, icons, screenshots or counts on `/`, and copy about craft rather than apps. App names go on `/work/`. Contact is info@jtcapps.com, a real mailbox.
+- `README.md` has the file layout and verification list. The Unfeast repo's bundle still contains the previous homepage, so importing all of it would overwrite this one.
+- `privacy/` and `404.html` still use the previous light design through `jtc.css`.
