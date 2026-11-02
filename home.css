@@ -3,7 +3,7 @@
 
 *{box-sizing:border-box}
 html{background:#0A0410;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:#0A0410;color:#F7F1F4;font-family:'Instrument Sans',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-synthesis:none;overflow-x:hidden}
+body{position:relative;isolation:isolate;margin:0;background:#0A0410;color:#F7F1F4;font-family:'Instrument Sans',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-synthesis:none;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
 .big{font-family:'Bricolage Grotesque','Arial Narrow',sans-serif;font-variation-settings:'opsz' 96}
@@ -43,6 +43,22 @@ h1{margin:0;font-size:clamp(44px,6.2vw,92px);line-height:1;font-weight:500;lette
 .status{display:block;margin-top:12px;font-size:14px;font-weight:500;color:#F7F1F4}
 .work-lower{padding-top:0}
 
+.lost{padding-top:42px;animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both}
+.lost p{margin:18px 0 24px;font-size:18px;font-weight:500}
+
+.glow{position:absolute;inset:0 0 auto;height:560px;z-index:-1;pointer-events:none;background-image:radial-gradient(70% 90% at 82% -20%,rgba(238,51,128,.42) 0,rgba(92,26,166,.3) 48%,transparent 100%)}
+.doc{padding-top:56px;padding-bottom:40px}
+.doc>*{max-width:720px}
+.doc h1,.doc h2{font-family:'Bricolage Grotesque','Arial Narrow',sans-serif;font-variation-settings:'opsz' 96;font-weight:500}
+.doc h1{max-width:none;margin-bottom:22px;font-size:clamp(56px,8vw,116px)}
+.doc h2{margin:56px 0 12px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);font-size:30px;line-height:1.1;letter-spacing:-.025em}
+.doc p{margin:0 0 16px;font-size:18px;line-height:1.6;color:#D6C9D8;text-wrap:pretty}
+.doc .eyebrow{margin-bottom:16px;font-size:14px;font-weight:500;color:#C4B2C7}
+.doc .lead{font-size:22px;line-height:1.42;font-weight:500;color:#F7F1F4}
+.doc a{color:#FFB08A;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.doc a:hover{color:#FFD2B8}
+.doc-legal{margin-top:0;padding:18px 0 28px;border-top:1px solid rgba(255,255,255,.16)}
+
 @media (max-width:760px){
   .wrap{padding:0 16px}
   .nav{height:68px}
@@ -58,6 +74,12 @@ h1{margin:0;font-size:clamp(44px,6.2vw,92px);line-height:1;font-weight:500;lette
   .work-head{padding:44px 0 40px}
   .work-head h1{font-size:18vw}
   .work-lower{padding-top:0}
+  .lost{padding-top:26px}
+  .doc{padding-top:32px}
+  .doc .lead{font-size:20px}
+  .doc h1{font-size:15vw}
+  .doc h2{font-size:26px;margin-top:44px}
+  .doc p{font-size:17px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

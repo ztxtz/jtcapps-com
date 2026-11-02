@@ -9,7 +9,7 @@ project's Deployments list in the Cloudflare dashboard. There is no build step.
 
 ## Homepage
 
-`index.html`, `home.css` and `home.js` are maintained here. `home.js` runs the
+`index.html`, `home.css` and `home.js` are maintained here, and `/work/`, `/privacy/` and `404.html` share them. `home.js` runs the
 WebGL Silk hero and leaves the CSS gradient in `home.css` in place without WebGL.
 Fonts are self-hosted in `assets/fonts/` (latin subsets, licences in `licenses/`)
 because the privacy notice names no font provider.
@@ -22,9 +22,8 @@ https://claude.ai/artifact/PM9oETjacwDBpEDqZ7jXST.
 
 `/unfeast/` comes from `launch/jtc-homepage/public/` in
 https://github.com/tom28881/Unfeast, branch `codex/jtc-website-analytics`. When
-importing from there, copy only `unfeast/` and check `privacy/` by hand: that bundle's
-root files are the previous homepage and would overwrite this one. `privacy/` and
-`404.html` still use `jtc.css` from that design. The legacy `/ios/` pages and root
+importing from there, copy only `unfeast/` and merge any `privacy/` text by hand: that bundle's
+root files are the previous homepage and would overwrite this one. The legacy `/ios/` pages and root
 `style.css` are kept for existing links.
 
 Keep the `noindex` metadata and Coming soon status until launch. App availability and
