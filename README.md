@@ -14,8 +14,9 @@ WebGL Silk hero and leaves the CSS gradient in `home.css` in place without WebGL
 Fonts are self-hosted in `assets/fonts/` (latin subsets, licences in `licenses/`)
 because the privacy notice names no font provider.
 
-The homepage stays abstract: it names no app and shows no app icon or screenshot.
-App names live on `/work/`. The design source is the canvas
+The homepage stays abstract, except for the link cards at the bottom of the hero, which
+open each app's site in a new tab. Adding an app means adding a card, with a thumbnail
+in `assets/`. `/work/` lists the apps too. The design source is the canvas
 https://claude.ai/artifact/PM9oETjacwDBpEDqZ7jXST.
 
 ## Other pages
