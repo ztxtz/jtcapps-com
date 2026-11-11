@@ -1,0 +1,66 @@
+:root {
+  color-scheme: light;
+  --canvas: #faf7ef;
+  --paper: #fffdf7;
+  --ink: #29332a;
+  --muted: #5c645a;
+  --accent: #425c42;
+  --tint: #e9eddf;
+  --line: #d9ddcf;
+  --focus: #974524;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-block: 1.5rem; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font-size: 1.0625rem; line-height: 1.75; }
+a { display: inline-block; min-block-size: 44px; max-inline-size: 100%; padding-block: .5rem; color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .2em; overflow-wrap: anywhere; vertical-align: baseline; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+.shell { inline-size: min(70rem, calc(100% - 2rem)); margin-inline: auto; }
+.site-header { border-block-end: 1px solid var(--line); }
+.site-header .shell { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .25rem 1.5rem; padding-block: .75rem; }
+.wordmark { color: var(--ink); font-weight: 750; font-size: 1.5rem; line-height: 1.5; letter-spacing: -.055em; text-decoration: none; }
+.wordmark::after { content: ""; display: inline-block; inline-size: .375rem; block-size: .375rem; border-radius: 50%; background: var(--accent); margin-inline-start: .18rem; }
+.back-link { font-size: .9375rem; }
+.document { inline-size: min(46rem, calc(100% - 2rem)); margin-inline: auto; padding-block: clamp(2rem, 6vw, 4.5rem); }
+.eyebrow { margin: 0 0 .65rem; color: var(--accent); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+h1, h2 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-weight: 500; line-height: 1.18; text-wrap: balance; }
+h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 4.375rem); letter-spacing: -.045em; overflow-wrap: anywhere; }
+.intro { margin-block: 1.15rem .65rem; color: var(--muted); max-inline-size: 39rem; }
+.version { margin-block: 0 1.5rem; font-size: .875rem; color: var(--muted); }
+.document-nav { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: 1.75rem; padding: .35rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); }
+.document-nav a { flex: 1 1 auto; min-inline-size: 6.5rem; padding: .5rem 1rem; text-align: center; border-radius: .7rem; font-size: .9375rem; }
+.document-nav a[aria-current="page"] { background: var(--tint); font-weight: 650; text-decoration-thickness: 2px; }
+.contents { margin-block: 1.5rem 2.5rem; border-block: 1px solid var(--line); padding-block: .5rem; }
+summary { min-block-size: 44px; padding-block: .5rem; cursor: pointer; font-size: .9375rem; font-weight: 650; color: var(--accent); }
+.contents ol { margin: .5rem 0 1rem; padding-inline-start: 1.5rem; }
+.contents li { padding-inline-start: .3rem; }
+.contents a { padding-inline: .25rem; }
+.legal-section { padding-block: 1.55rem; border-block-end: 1px solid var(--line); scroll-margin-block-start: 1.5rem; }
+.legal-section:first-of-type { padding-block-start: .25rem; }
+h2 { margin: 0 0 .85rem; font-size: clamp(1.5rem, 3.5vw, 1.875rem); letter-spacing: -.025em; }
+.legal-section p { margin: 0; overflow-wrap: anywhere; }
+.legal-section p + p { margin-block-start: .8rem; }
+.license-link { margin-block: 0 1.2rem; }
+.site-footer { border-block-start: 1px solid var(--line); padding-block: 1.5rem 2rem; color: var(--muted); font-size: .875rem; }
+.site-footer .shell { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 2rem; }
+.site-footer p { margin: .5rem 0; }
+.site-footer nav { display: flex; align-items: flex-start; flex-wrap: wrap; gap: .25rem 1rem; }
+.skip-link { position: absolute; inset-block-start: -10rem; inset-inline-start: 1rem; z-index: 2; padding: .5rem 1rem; background: var(--paper); border: 1px solid var(--accent); }
+.skip-link:focus { inset-block-start: .75rem; }
+@media (max-width: 32rem) {
+  body { font-size: 1rem; }
+  .document { padding-block-start: 2rem; }
+  .site-footer .shell { display: block; }
+  .document-nav a { padding-inline: .55rem; min-inline-size: 5.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: white; }
+  .site-header, .document-nav, .contents, .site-footer, .skip-link { display: none; }
+  .document { inline-size: auto; padding: 0; }
+  a { color: inherit; min-block-size: 0; padding: 0; }
+  .legal-section { break-inside: avoid; }
+}

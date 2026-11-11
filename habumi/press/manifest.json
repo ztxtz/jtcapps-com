@@ -1,0 +1,80 @@
+{
+  "schema_version": 2,
+  "kind": "web-derived-gallery",
+  "brand": "Habumi",
+  "capture_date": "2026-11-02",
+  "panels": [
+    {
+      "panel_id": "01-today",
+      "source_export": "iphone/01-today.png",
+      "source_sha256": "e3ff151253e98ffbb762fbf393a94acd559e6e4c9305c4a44b450cac866f28c1",
+      "alt": "Habumi Today",
+      "files": [
+        {
+          "file": "assets/01-today-660.webp",
+          "dimensions": [
+            660,
+            1434
+          ],
+          "sha256": "f9e53a999f9d1c8096cbc7ca3905a0135dfd7529d48fb55988e9cef8efb6e6e7"
+        },
+        {
+          "file": "assets/01-today-990.webp",
+          "dimensions": [
+            990,
+            2151
+          ],
+          "sha256": "887c274ecec959939515d96baab69d011a7d6ac8c57fbbe00b371c03f0bea87d"
+        }
+      ]
+    },
+    {
+      "panel_id": "02-journal",
+      "source_export": "iphone/02-journal.png",
+      "source_sha256": "c0aff7c27941ee89d34249048be3d9c22e326e4d9d0d3c3f3bd423814026e6a4",
+      "alt": "Habumi Journal",
+      "files": [
+        {
+          "file": "assets/02-journal-660.webp",
+          "dimensions": [
+            660,
+            1434
+          ],
+          "sha256": "377a82428efa8df401d07a7bd3bf4be4c8577555b7fcc9788e8a52487d812971"
+        },
+        {
+          "file": "assets/02-journal-990.webp",
+          "dimensions": [
+            990,
+            2151
+          ],
+          "sha256": "689695376ea3869cd3bd92a5dbb4901ada47c3795f04334c55f8248020738b38"
+        }
+      ]
+    },
+    {
+      "panel_id": "03-insights",
+      "source_export": "iphone/03-insights.png",
+      "source_sha256": "44626647f01d3993aec012ed6d469dcae1704ea422617ff49e3de5a326e99b9a",
+      "alt": "Habumi Insights",
+      "files": [
+        {
+          "file": "assets/03-insights-660.webp",
+          "dimensions": [
+            660,
+            1434
+          ],
+          "sha256": "ffebb6a9dd93c7b39c64f58bfd58bc0d2b6b0eee5d42344019866aebc5737034"
+        },
+        {
+          "file": "assets/03-insights-990.webp",
+          "dimensions": [
+            990,
+            2151
+          ],
+          "sha256": "80fa96b136916a87f40d93459b93442264818cd9f99e1e1364bfd57bd2fb98d8"
+        }
+      ]
+    }
+  ]
+}

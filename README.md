@@ -24,7 +24,9 @@ https://claude.ai/artifact/PM9oETjacwDBpEDqZ7jXST.
 `/unfeast/` comes from `launch/jtc-homepage/public/` in
 https://github.com/tom28881/Unfeast, branch `codex/jtc-website-analytics`. When
 importing from there, copy only `unfeast/` and merge any `privacy/` text by hand: that bundle's
-root files are the previous homepage and would overwrite this one. The legacy `/ios/` pages and root
+root files are the previous homepage and would overwrite this one. `/habumi/` comes from
+`habisat/` in https://github.com/tom28881/orbit-habit-tracker (`d016766`), with internal
+`/habisat/` URLs rewritten to `/habumi/`. The legacy `/ios/` pages and root
 `style.css` are kept for existing links.
 
 Keep the `noindex` metadata and Coming soon status until launch. App availability and
@@ -33,7 +35,8 @@ mailbox handling are separate from website deployment.
 ## Production verification
 
 Check HTTPS responses for `/`, `/work/`, `/privacy/`, `/unfeast/`, `/unfeast/support/`,
-`/unfeast/privacy/`, `/unfeast/terms/` and `/unfeast/consumer-health/`. Confirm a
+`/unfeast/privacy/`, `/unfeast/terms/`, `/unfeast/consumer-health/`, `/habumi/`,
+`/habumi/support/`, `/habumi/privacy/`, `/habumi/terms/` and `/habumi/press/`. Confirm a
 missing path returns HTTP 404 with `404.html`, HTTP redirects to HTTPS, and `www`
 redirects to the apex domain. Compare live page and asset bytes with committed files.
 
