@@ -26,7 +26,10 @@ https://github.com/tom28881/Unfeast, branch `codex/jtc-website-analytics`. When
 importing from there, copy only `unfeast/` and merge any `privacy/` text by hand: that bundle's
 root files are the previous homepage and would overwrite this one. `/habumi/` comes from
 `habisat/` in https://github.com/tom28881/orbit-habit-tracker (`d016766`), with internal
-`/habisat/` URLs rewritten to `/habumi/`. The legacy `/ios/` pages and root
+`/habisat/` URLs rewritten to `/habumi/`. `/hold-the-scroll/` comes from
+`web/landing/dist/` in https://github.com/tom28881/space (`e0d28ed`), omitting the sibling
+`privacy.html`, `support.html` and `terms.html` stubs in favor of `_redirects` to avoid
+Cloudflare Pages Pretty URLs conflicts with `*/index.html`. The legacy `/ios/` pages and root
 `style.css` are kept for existing links.
 
 Keep the `noindex` metadata and Coming soon status until launch. App availability and
@@ -36,7 +39,9 @@ mailbox handling are separate from website deployment.
 
 Check HTTPS responses for `/`, `/work/`, `/privacy/`, `/unfeast/`, `/unfeast/support/`,
 `/unfeast/privacy/`, `/unfeast/terms/`, `/unfeast/consumer-health/`, `/habumi/`,
-`/habumi/support/`, `/habumi/privacy/`, `/habumi/terms/` and `/habumi/press/`. Confirm a
+`/habumi/support/`, `/habumi/privacy/`, `/habumi/terms/`, `/habumi/press/`,
+`/hold-the-scroll/`, `/hold-the-scroll/support/`, `/hold-the-scroll/privacy/` and
+`/hold-the-scroll/terms/`. Confirm a
 missing path returns HTTP 404 with `404.html`, HTTP redirects to HTTPS, and `www`
 redirects to the apex domain. Compare live page and asset bytes with committed files.
 

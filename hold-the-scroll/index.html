@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hold the Scroll: a pause before you open</title>
+<meta name="description" content="Hold the Scroll puts a calm pause between the reach and the feed. Pick the apps and websites, set when your iPhone steps in, and choose: Return to Flow, or continue.">
+<meta name="theme-color" content="#F9F6F0">
+<meta property="og:title" content="Hold the Scroll: a pause before you open">
+<meta property="og:description" content="A calm pause between the reach and the feed. No account to create. Your pause history stays on your iPhone.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Geist-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  html.is-loading-film { background: #F9F6F0; }
+  html.is-loading-film body { visibility: hidden; }
+</style>
+<script>
+  const root = document.documentElement;
+  root.classList.replace('no-js', 'js');
+  const mode = new URLSearchParams(location.search).get('mode');
+  const supportsFilm = window.WebGL2RenderingContext && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (mode === '3d' || (mode !== 'static' && supportsFilm)) {
+    root.classList.add('is-loading-film');
+    // A missing or stalled script must still leave a usable page.
+    setTimeout(() => {
+      if (!root.classList.contains('is-3d')) root.classList.remove('is-loading-film');
+    }, 8000);
+  }
+</script>
+<link rel="stylesheet" href="styles.css?v=film-start-1">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Opening: the name is a window into the world. Scroll flies through the letters. -->
+<div class="intro" aria-hidden="true">
+  <canvas class="intro__canvas"></canvas>
+  <p class="intro__hint mono">Scroll to begin <span>&darr;</span></p>
+</div>
+
+<header class="hud">
+  <a class="hud__brand" href="#open" aria-label="Hold the Scroll, back to top">
+    <img src="assets/icon.webp" width="28" height="28" alt="">
+    <span data-brand>Hold the Scroll</span>
+  </a>
+  <nav class="hud__nav" aria-label="Sections">
+    <a href="#reach">The pause</a>
+    <a href="#rules">Rules</a>
+    <a href="#insights">Insights</a>
+    <a href="#private">Privacy</a>
+    <a class="hud__cta" href="#start">Plans</a>
+  </nav>
+  <div class="hud__meter mono" aria-hidden="true">
+    <span class="hud__label">Scroll speed</span>
+    <span class="hud__value"><b data-speed>0</b> px/s</span>
+    <span class="hud__bar"><i data-speed-bar></i></span>
+  </div>
+  <div class="hud__chapter mono" aria-hidden="true"><span data-chapter-no>00</span> / <span data-chapter-name>Open</span></div>
+</header>
+
+<main id="main">
+  <section id="open" class="chapter" data-name="Open" data-len="2.4" data-len-m="1.75">
+    <div class="stage">
+      <div class="beat beat--hero" data-range="0.42 1.05">
+        <p class="eyebrow mono">For iPhone</p>
+        <h1 class="display">Hold the&nbsp;scroll.</h1>
+        <p class="lede">A calm pause between the reach and the feed. You pick the apps and websites. Your iPhone steps in when you open&nbsp;them.</p>
+        <p class="ctas"><a class="btn" href="#start">See what&rsquo;s free</a><a class="btn btn--ghost" href="#pause">See the pause</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reach" class="chapter" data-name="The reach" data-len="2.5" data-len-m="1.9" data-brake="0.46 0.7">
+    <div class="stage with-shot">
+      <div class="beat beat--left" data-range="0.0 0.38">
+        <p class="eyebrow mono">01 &mdash; The reach</p>
+        <h2 class="display">Your thumb knows the&nbsp;way.</h2>
+        <p class="lede">Muscle memory opens the feed before you have decided to. That is the moment Hold the Scroll is built&nbsp;for.</p>
+      </div>
+      <div id="pause" class="beat beat--right" data-range="0.44 1.0" tabindex="-1">
+        <p class="eyebrow mono eyebrow--clay">On hold</p>
+        <h2 class="display">Then everything <em>stops</em>.</h2>
+        <p class="lede">Open a protected app and iOS shows the Hold the Scroll shield first: &ldquo;Do you still want to open it?&rdquo; One question, one&nbsp;choice.</p>
+      </div>
+      <a class="screenshot" href="assets/screens/phone-shield.webp">
+        <img src="assets/screens/phone-shield.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="The shield asks whether to open LinkedIn. Choose Return to Flow or Continue for 15 minutes.">
+        <span>Open full-size screenshot</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="choice" class="chapter" data-name="Your call" data-len="2.4" data-len-m="1.65">
+    <div class="stage with-shot">
+      <div class="beat beat--left" data-range="0.05 1.0">
+        <p class="eyebrow mono">02 &mdash; Your call</p>
+        <h2 class="display">Return to Flow. <em>Or&nbsp;continue.</em></h2>
+        <p class="lede">No lectures, no guilt. Leave with one tap, or continue for the time you set for that rule: 5, 10 or 15 minutes. With Strict mode (Pro) there is no Continue, and the app stays closed while protection is&nbsp;on.</p>
+        <ul class="chips mono">
+          <li><span class="dot dot--sage"></span>Return to Flow</li>
+          <li><span class="dot dot--clay"></span>Continue 5 min</li>
+          <li><span class="dot dot--ink"></span>Strict mode <span class="pro">Pro</span></li>
+        </ul>
+        <p class="ctas"><a class="btn btn--ghost" href="#start">See what&rsquo;s free</a></p>
+      </div>
+      <a class="screenshot" href="assets/screens/phone-today-after.webp">
+        <img src="assets/screens/phone-today-after.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="Today shows one recorded return.">
+        <span>Open full-size screenshot</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="rules" class="chapter" data-name="Rules" data-len="3.6">
+    <div class="stage">
+      <div class="beat beat--top" data-range="0.0 0.22">
+        <p class="eyebrow mono">03 &mdash; Rules</p>
+        <h2 class="display">Rules that fit your&nbsp;day.</h2>
+        <p class="lede">Each rule has its own apps, categories and websites, and its own idea of when to step&nbsp;in.</p>
+        <p class="ctas"><a class="btn btn--ghost" href="#start">Your first rule is free: see plans</a></p>
+      </div>
+      <div id="schedule" class="beat beat--card" data-range="0.2 0.47">
+        <p class="eyebrow mono">Schedule</p>
+        <h3 class="display">Protect the hours that matter.</h3>
+        <p>With Free, keep your rule on all the time or use the same time window every day. Pro adds custom days of the week and multiple time&nbsp;windows.</p>
+        <a class="screenshot" href="assets/screens/phone-rule-schedule.webp">
+          <img src="assets/screens/phone-rule-schedule.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="Rule editor with a daily schedule from 20:00 to 7:00.">
+          <span>Open full-size screenshot</span>
+        </a>
+      </div>
+      <div class="beat beat--card" data-range="0.47 0.74">
+        <p class="eyebrow mono">Limits</p>
+        <h3 class="display">A daily allowance.</h3>
+        <p>Use your free rule to set a daily time limit or a maximum number of opens for the apps and websites you select in Screen&nbsp;Time.</p>
+        <a class="screenshot" href="assets/screens/phone-rule-limits.webp">
+          <img src="assets/screens/phone-rule-limits.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="Rule editor with a limit of five opens a day.">
+          <span>Open full-size screenshot</span>
+        </a>
+      </div>
+      <div class="beat beat--card" data-range="0.74 1.0">
+        <p class="eyebrow mono">Places <span class="pro">Pro</span></p>
+        <h3 class="display">Switch on where it&nbsp;counts.</h3>
+        <p>A rule can turn on when you arrive at the office, or when you leave&nbsp;home.</p>
+        <a class="screenshot" href="assets/screens/phone-rule-places.webp">
+          <img src="assets/screens/phone-rule-places.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="Place picker with a 200-metre radius on the map.">
+          <span>Open full-size screenshot</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="insights" class="chapter" data-name="Insights" data-len="2.6" data-len-m="1.65">
+    <div class="stage with-shot">
+      <div class="beat beat--left" data-range="0.06 1.0">
+        <p class="eyebrow mono">04 &mdash; Insights</p>
+        <h2 class="display">See what you&nbsp;<em>chose</em>.</h2>
+        <p class="lede">See Apple Screen Time in Free for 7 Days, 30 Days or All Time. Pro adds Hold the Scroll analytics about when you reach for protected apps and what you choose at the&nbsp;pause.</p>
+        <ul class="legend mono">
+          <li><span class="dot dot--sage"></span>Return to Flow</li>
+          <li><span class="dot dot--clay"></span>Continue</li>
+        </ul>
+        <p class="ctas"><a class="btn btn--ghost" href="#start">See Free and Pro</a></p>
+      </div>
+      <a class="screenshot" href="assets/screens/phone-insights-heatmap.webp">
+        <img src="assets/screens/phone-insights-heatmap.webp" width="1024" height="2221" loading="lazy" decoding="async" alt="Sample Insights overview with Screen Time, pick-ups, time on protected apps, a rule comparison, and a seven-day heatmap of phone use by hour.">
+        <span>Open full-size preview</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="private" class="chapter" data-name="Private" data-len="2.6" data-len-m="1.65">
+    <div class="stage">
+      <div class="beat beat--center" data-range="0.12 1.0">
+        <p class="eyebrow mono">05 &mdash; Private by design</p>
+        <h2 class="display">Stays on this&nbsp;iPhone.</h2>
+        <p class="lede">Your pause history is stored on the device. Hold the Scroll cannot see what you read, type or watch in other&nbsp;apps.</p>
+        <ul class="facts">
+          <li><b>0</b><span>accounts to create</span></li>
+          <li><b>1</b><span>iPhone holds your history</span></li>
+          <li><b>0</b><span>messages or feeds it can read</span></li>
+        </ul>
+        <p class="ctas ctas--center"><a class="btn" href="#start">See plans</a> <a class="btn btn--ghost" href="privacy/">Read the privacy policy</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter chapter--finale" data-name="Start" data-len="2.4" data-len-m="1.7">
+    <div class="stage">
+      <div class="beat beat--sky" data-range="0.08 0.5">
+        <h2 class="display">Room to <em>choose</em>.</h2>
+      </div>
+    </div>
+  </section>
+
+  <section id="start" class="pricing" aria-labelledby="plans-title" tabindex="-1">
+    <h2 id="plans-title" class="display">Your first rule is always&nbsp;free.</h2>
+    <div class="plans">
+      <article class="plan">
+        <h3>Free</h3>
+        <ul>
+          <li>One rule for apps, categories and websites</li>
+          <li>Always on, one daily schedule, a daily time limit or a daily open limit</li>
+          <li>Manually entered websites with Always or Schedule</li>
+          <li>Return to Flow or continue for 5, 10 or 15 minutes</li>
+          <li>Apple Screen Time overview and detail for 7 Days, 30 Days and All Time (up to 60 days)</li>
+        </ul>
+      </article>
+      <article class="plan plan--pro">
+        <h3>Hold the Scroll Pro</h3>
+        <ul>
+          <li>Up to 10 rules, with <strong>custom days of the week</strong> and <strong>up to four time windows per rule</strong></li>
+          <li><strong>Place-based rules</strong> that activate when you arrive or leave</li>
+          <li>Strict mode keeps protected apps closed while the rule is active</li>
+          <li>Hold the Scroll analytics, weekly recap and achievements</li>
+        </ul>
+      </article>
+    </div>
+    <div class="cta-row">
+      <p class="availability">Coming soon to the App&nbsp;Store</p>
+      <p class="fine">Pro renews automatically through Apple until you cancel. <a href="terms/#subscriptions">Subscription terms</a></p>
+    </div>
+  </section>
+
+  <section id="questions" class="faq" aria-labelledby="questions-title">
+    <h2 id="questions-title" class="display">Questions</h2>
+    <details>
+      <summary>Do I need Pro to pause an app?</summary>
+      <p>Free includes one protection rule. That rule can cover multiple apps, categories and websites you pick in Screen Time.</p>
+    </details>
+    <details>
+      <summary>Can I block websites on Free?</summary>
+      <p>Yes. In Free, type a website address for an Always or Schedule rule. Apple&rsquo;s web filter shows a blocked page for that address. To set a time or open limit on a website, select it from Apple&rsquo;s Screen Time picker.</p>
+    </details>
+    <details>
+      <summary>What happens when Pro ends?</summary>
+      <p>Your rules and history stay on your iPhone. One enabled Always, Schedule, time limit or open limit rule can keep running with the Free settings.</p>
+    </details>
+    <details>
+      <summary>How do I restore or cancel Pro?</summary>
+      <p>For an active subscription, tap Restore Purchases in Hold the Scroll&rsquo;s Settings with the Apple Account you used to subscribe. To cancel or change your plan, open <a href="https://apps.apple.com/account/subscriptions">Apple Subscriptions</a>.</p>
+    </details>
+    <p class="faq__support"><a href="support/">Get support</a></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><span data-brand>Hold the Scroll</span> &middot; JTC INTERACTIVE – FZCO</p>
+  <nav class="foot__links" aria-label="Footer">
+    <a href="privacy/">Privacy Policy</a>
+    <a href="terms/">Terms of Use</a>
+    <a href="support/">Support</a>
+  </nav>
+</footer>
+
+<script type="module" src="src/main.js?v=film-start-1"></script>
+</body>
+</html>
