@@ -1,7 +1,17 @@
-// Silk hero: a dark, warm cloth shader. Pauses off-screen, renders one frame for reduced motion,
-// and leaves the CSS gradient in place when WebGL is unavailable.
+// Silk hero + scrolled header separation.
+// Pauses off-screen, renders one frame for reduced motion, and leaves the CSS gradient in place when WebGL is unavailable.
 (() => {
   'use strict';
+
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const syncHeader = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 18);
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+  }
+
   const cv = document.querySelector('canvas.silk');
   if (!cv) return;
   const PAL = [[1.0, 0.66, 0.26], [1.0, 0.2, 0.47], [0.46, 0.1, 0.82]];

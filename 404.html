@@ -6,31 +6,38 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0A0410">
   <meta name="robots" content="noindex, nofollow">
-  <title>Page not found — JTC</title>
+  <title>Page not found | JTC</title>
   <link rel="icon" href="/jtc-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/home.css?v=4">
-  <script src="/home.js?v=1" defer></script>
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/home.css?v=7">
+  <script src="/home.js?v=3" defer></script>
 </head>
 <body>
-  <section class="hero">
-    <canvas class="silk" aria-hidden="true"></canvas>
+  <header class="site-header">
     <div class="wrap">
-      <header class="nav">
+      <div class="nav">
         <a class="logo" href="/" aria-label="JTC home">JTC</a>
         <nav class="links" aria-label="Main">
           <a href="/work/">Work</a>
           <a href="/#approach">Approach</a>
           <a href="/#contact">Contact</a>
         </nav>
-      </header>
-      <main class="lost">
-        <h1 class="big">A little<br>off track.</h1>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero hero-lost">
+    <canvas class="silk" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="lost">
+        <h1 class="big hero-title">A little off track.</h1>
         <p>That page isn’t here.</p>
         <a class="go" href="/">Back to home
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
         </a>
-      </main>
+      </div>
     </div>
-  </section>
+  </main>
 </body>
 </html>

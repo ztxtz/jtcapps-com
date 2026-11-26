@@ -6,38 +6,101 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0A0410">
   <meta name="robots" content="noindex, nofollow">
-  <title>Work — JTC</title>
+  <title>Work | JTC</title>
   <meta name="description" content="Work from JTC.">
   <link rel="canonical" href="https://jtcapps.com/work/">
   <link rel="icon" href="/jtc-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/home.css?v=4">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/home.css?v=7">
+  <script src="/home.js?v=3" defer></script>
   <script src="/assets/analytics.js?v=85d5479" data-website-id="51aa6d19-b6a3-4498-9c94-1985fffdc93a" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="wrap">
-    <header class="nav">
-      <a class="logo" href="/" aria-label="JTC home">JTC</a>
-      <nav class="links" aria-label="Main">
-        <a href="/work/" aria-current="page">Work</a>
-        <a href="/#approach">Approach</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-    </header>
-    <div class="work-head"><h1 class="big">Our work</h1></div>
-  </div>
-  <main class="lower work-lower" id="main">
-    <section aria-label="Work">
-      <a class="row work-row" href="https://snapmymeal.app"><h2 class="big">SnapMyMeal</h2><p>Snap a meal and know what’s in it.<span class="status">Coming soon</span></p></a>
-      <a class="row work-row" href="/unfeast/"><h2 class="big">Unfeast</h2><p>Fasting, at your pace.<span class="status">Coming soon</span></p></a>
-      <a class="row work-row" href="/habumi/"><h2 class="big">Habumi</h2><p>Habits, routines &amp; streaks.<span class="status">Coming soon</span></p></a>
-      <a class="row work-row" href="/hold-the-scroll/"><h2 class="big">Hold the Scroll</h2><p>A calm pause between the reach and the feed.<span class="status">Coming soon</span></p></a>
-    </section>
-    <footer>
-      <p class="ask">Something worth making? Start with hello.</p>
-      <a class="mail big" href="mailto:info@jtcapps.com">info@jtcapps.com</a>
-      <div class="legal"><span>© 2026 JTC INTERACTIVE – FZCO · IFZA DSO, Dubai, UAE</span><a href="/privacy/">Privacy</a></div>
-    </footer>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="nav">
+        <a class="logo" href="/" aria-label="JTC home">JTC</a>
+        <nav class="links" aria-label="Main">
+          <a href="/work/" aria-current="page">Work</a>
+          <a href="/#approach">Approach</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-top" id="main">
+    <div class="wrap">
+      <div class="work-head">
+        <h1 class="big">Our work</h1>
+      </div>
+
+      <section class="work-list" aria-label="Work">
+        <a class="work-row" href="https://snapmymeal.app">
+          <span class="work-thumb"><img src="/assets/thumb-snapmymeal.webp" alt="" width="300" height="248"></span>
+          <span class="work-meta">
+            <h2 class="big">SnapMyMeal</h2>
+            <p>Snap a meal and know what’s in it.</p>
+            <span class="status">Coming soon</span>
+          </span>
+          <span class="work-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
+          </span>
+        </a>
+
+        <a class="work-row" href="/unfeast/">
+          <span class="work-thumb"><img src="/assets/thumb-unfeast.webp" alt="" width="300" height="248"></span>
+          <span class="work-meta">
+            <h2 class="big">Unfeast</h2>
+            <p>Fasting, at your pace.</p>
+            <span class="status">Coming soon</span>
+          </span>
+          <span class="work-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
+          </span>
+        </a>
+
+        <a class="work-row" href="/habumi/">
+          <span class="work-thumb"><img src="/assets/thumb-habumi.webp" alt="" width="300" height="248"></span>
+          <span class="work-meta">
+            <h2 class="big">Habumi</h2>
+            <p>Habits, routines &amp; streaks.</p>
+            <span class="status">Coming soon</span>
+          </span>
+          <span class="work-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
+          </span>
+        </a>
+
+        <a class="work-row" href="/hold-the-scroll/">
+          <span class="work-thumb"><img src="/assets/thumb-hold-the-scroll.webp" alt="" width="300" height="248"></span>
+          <span class="work-meta">
+            <h2 class="big">Hold the Scroll</h2>
+            <p>A calm pause between the reach and the feed.</p>
+            <span class="status">Coming soon</span>
+          </span>
+          <span class="work-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/></svg>
+          </span>
+        </a>
+      </section>
+
+      <footer class="contact-footer" id="contact">
+        <p class="ask">Something worth making? Start with hello.</p>
+        <a class="mail big" href="mailto:info@jtcapps.com">info@jtcapps.com</a>
+        <div class="legal">
+          <span>© 2026 JTC INTERACTIVE – FZCO · IFZA DSO, Dubai, UAE</span>
+          <div class="legal-links">
+            <a href="/">Home</a>
+            <a href="/privacy/">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   </main>
 </body>
 </html>
