@@ -76,3 +76,5 @@ html:not(.story-ready) .journey{height:auto}html:not(.story-ready) .journey-pin{
   .personal-section,.studio-practical,.faq-section,#download{scroll-margin-top:92px}
 }
 @media(max-width:359px){.site-nav{padding-inline:20px;gap:8px}.site-nav .brand{font-size:26px}.site-nav>.nav-cta{padding-inline:10px;gap:8px;font-size:10px}.mobile-menu summary{min-width:44px;padding-inline:8px}}
+
+.store-badge{display:inline-flex;vertical-align:middle}.store-badge img{display:block;width:auto;height:44px}.finale-copy .store-badge{margin-top:24px}
